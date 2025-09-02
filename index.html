@@ -1,39 +1,151 @@
-<!doctype html>
+<<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>My Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {font-family: Arial, sans-serif; margin: 2rem; max-width: 700px;}
-    header {text-align: center;}
-    h1 {color: #333;}
-    section {margin-top: 2rem;}
-    a.button {display:inline-block; padding:.5rem 1rem; background:#333; color:#fff; border-radius:5px; text-decoration:none;}
+    /* === Basic Styles === */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: .5rem;
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: .3rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    /* === Projects Grid === */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .project-card img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+    .project-card h3 {
+      margin: .8rem 0 .4rem;
+    }
+
+    /* === Contact Buttons === */
+    .contact a {
+      display: inline-block;
+      margin-right: .5rem;
+      margin-bottom: .5rem;
+      padding: .6rem 1rem;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background .3s;
+    }
+    .contact a:hover {
+      background: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #eee;
+      color: #666;
+      font-size: .9rem;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Hello, I'm [Your Name]</h1>
-    <p>Welcome to my portfolio!</p>
+    <img src="https://via.placeholder.com/150" alt="Your Name Profile Photo">
+    <h1>Kendra Gentry</h1>
+    <p>Web Developer | Designer | Creator</p>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I’m learning web development and built this free site to showcase my work.</p>
-  </section>
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I’m an aspiring web developer, and this is my portfolio site. I enjoy building websites and learning new technologies. This site is fully free to host and built with just HTML & CSS!</p>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Project 1:</strong> Description here</li>
-      <li><strong>Project 2:</strong> Description here</li>
-    </ul>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Project 1 preview">
+          <h3>Project One</h3>
+          <p>A short description of your project goes here. What problem did it solve? What tools did you use?</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Project 2 preview">
+          <h3>Project Two</h3>
+          <p>Another project description. Keep it short and clear. Add screenshots or links later.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200" alt="Project 3 preview">
+          <h3>Project Three</h3>
+          <p>Even if you’re a beginner, you can show off simple projects like a to-do app, calculator, or landing page.</p>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Contact</h2>
-    <a class="button" href="mailto:youremail@example.com">Email Me</a>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <a href="mailto:youremail@example.com">Email Me</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your Name. All rights reserved.
+  </footer>
+
+  <script>
+    // Auto-update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
